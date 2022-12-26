@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <Div>Here we are going to perform Binary search Method</Div>
+    <script>
+        var array = [2, 4, 6, 2, 4, 8, 8, 234, 1, 2, 5, 78, 4, 324, 56, 78, 98, 98, 34, 55, 6]
+
+        sorting(array)
+        console.log(array)
+        //here we are creating swap function
+        function swap(i, j, array) {
+            var temp = array[i]
+            array[i] = array[j]
+            array[j] = temp
+
+
+        }
+
+        //here we are creating function for sorting
+        function sorting(arrayvar) {
+            var arraydummy = arrayvar
+            for (var l = 0; l < arraydummy.length - 1; l++) {
+                for (var m = 0; m < arraydummy.length; m++) {
+                    if (arraydummy[m] > arraydummy[m + 1]) {
+                        swap(m, m + 1, arraydummy)
+                    }
+                }
+            }
+        }
+        // var array = [2, 4, 6, 2, 4, 8, 8, 234, 1, 2, 5, 78, 4, 324, 56, 78, 98, 98, 34, 55, 6]
+
+
+        //here what we will do we will create one function and we will give it the value of mid first and end and we will call same function from within the function
+        let checkpr = function (first, last) {
+            console.log(array)
+
+            // if (first > last) return false;
+            let mid = Math.floor((first + last) / 2)
+            if (array[mid] === target) return true;
+            if (array[mid] < target) {
+                return checkpr(mid + 1, last)
+            }
+            else {
+                return checkpr(first, mid - 1)
+            }
+        }
+        var target = 98;
+        var lastvalue = array.length - 1
+        var firstvalue = 0
+        if (checkpr(firstvalue, lastvalue))
+            console.log("yes this exists")
+        else (
+            console.log("no this does not exists")
+
+        )
+    </script>
+</body>
+</body>
+
+</html>
