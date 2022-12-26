@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+      <script>
+        console.log("-------------------------------------------");
+        //normal way by using loop and if else : 
+        var array = [3, 4, 5, 6, 7, 8, 9, 10];
+      target = 6;
+      
+      var check = 0;
+      for (i = 0; i < array.length - 1; i++) {
+        if (array[i] == target) {
+          check = 1;
+        }
+      }
+      if (check == 0) {
+        console.log("Not found");
+      } else {
+        console.log("Element found");
+      }
+
+      console.log("-------------------------------------------");
+
+      // here we are doing same thing with loop and function
+      
+      for (i = 0; i < array.length - 1; i++) {
+        fun(i);
+
+        function fun(i) {
+            if (array[i] == target) {
+                return true;
+            } else {
+            return false;
+        }
+        }
+      }
+      if (fun) console.log("yes found by fun");
+      else console.log("No this does not exists : " + array[i], target);
+      
+      console.log("-------------------------------------------");
+
+      // by using only while function
+
+      i = 0;
+      var hlw = () => {
+          while (i < array.length) {
+          if (array[i] == target) {
+            return true;
+          } else {
+              return false;
+            }
+          i++;
+        }
+      };
+      if (hlw) console.log("yes found by while");
+      else console.log("No this does not exists : " + array[i], target);
+      console.log("-------------------------------------------");
+    </script>
+  </body>
+</html>
