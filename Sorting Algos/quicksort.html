@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var arr = [52, 68, 45, 8, 2, 5, 75, 10];
+
+
+      function quickshort(arr) {
+        console.log("here array is ",arr)
+          const left = [];
+          const right = [];
+          if (arr.length <= 1) {
+            return arr;
+          }
+        var pav = arr[arr.length - 1];
+
+        
+        for (var i = 0; i < arr.length - 1; i++) {
+          console.log("here i is ",arr[i]);
+            if(arr[i]<pav){
+              left.push(arr[i])
+              console.log("left",left)
+
+
+            }
+            else{
+              right.push(arr[i])
+              console.log("right",right);
+
+            }
+
+        //   arr[i] < pav ? left.push(arr[i]) : right.push(arr[i]);
+
+        }
+        // console.log("left",quickshort(left))
+        return [...quickshort(left), pav, ...quickshort(right)];
+      }
+      // quickshort(arr) 
+      console.log(quickshort(arr));
+    </script>
+  </body>
+</html>
