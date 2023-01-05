@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+here we are learning Basic Concept of This
+</br>
+</br>
+    <h1>Calling This inside window will take this as of window
+        </br>
+        </br>
+        calling this inside object will take this of the object
+        </br>
+
+        calling this inside a private object will take this of the private object.
+    </h1>
+    <h2>
+        here We Are learning to use call function so we can call one function at many places from any place
+    </br>
+    </br>
+        Here is call function to rescue just in case if you are calling others this in window
+        </br>
+        function("This of what we have to use","argument if we want to pass something")
+    </h2>
+
+    <h1>
+        function inside a function
+        </br>
+        </br>
+        if we want to call a function inside a functiona and want to pass this valuse to it
+        </br>
+        </br>
+        then we must use arrow function because arrow function will use all the scopes provided to the main function
+        </br>
+        </br>
+        there are three more ways first we can store value of this in a variable and then use that variable at the place
+        of This
+        </br>
+        </br>
+        second is we can use bind function functionName.bind(this)(variable)
+        </br>
+        </br>
+        here bind does what is it passes values of scopes from global to innerfunction
+        </br>
+        </br>
+        third is by again calling call function inside A call function
+    </h1>
+</body>
+<script>
+    'use strict'
+    //  console.log("hello world");
+
+    this.table = "window table"
+    // console.log(window.table);
+    function ketchup(ksf) {
+        let innerfunction = (ksf) => {
+            console.log("ketchup function is called inside", this.table, "this is variables passes", ksf)
+        }
+        innerfunction(ksf)
+    };
+    // here we are calling function for global scope
+
+    this.garage = {
+        table: "garage table",
+        engine: "bmw engine",
+        light: "audi",
+    }
+
+    let johnnyRoom = [
+        {
+            table: "johnny Table",
+            sofa: " johnny sofa",
+            bed: "johnny bed",
+            ketchups: "tomato sauce",
+            kitchen: "johnny kitchen"
+        },
+        {
+            table: "johnny Table1",
+            sofa: " johnny sofa1",
+            bed: "johnny bed1",
+            kitchen: "johnny kitchen1"
+        },
+        {
+            table: "johnny Table2",
+            sofa: " johnny sofa2",
+            bed: "johnny bed2",
+            kitchen: "johnny kitchen2"
+        },
+        {
+            table: "johnny Table3",
+            sofa: " johnny sofa3",
+            bed: "johnny bed3",
+            kitchen: "johnny kitchen3"
+        }
+    ]
+    ketchup.call(this, "woooh")
+    ketchup.call(garage, "woooh")
+    ketchup.call(johnnyRoom[2], "woooh")
+</script>
+
+</html>
