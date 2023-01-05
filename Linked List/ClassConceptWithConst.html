@@ -1,1 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>
+        Here we are going to learn about classes 
+    </br>
+    Classes are mainly containing function to create newRoom and they can have prototype methods 
+    so we don't need to call constructor.prototype.function to add function every time we create newRoom
+</br>
+    </h1>
+</body>
+<script>
+    // Like we did in constructor we make a new room using function and new attr
     // and then we add a method "Prototype so every time we create new function that method is automatically called"
+    // here in class it is same concept 
+    // Class mainly contains functions for constructor and prototypes 
+    
+
+    // here first we are creating contructor using old way 
+    
+    //first creating function for constructor
+     function this_is_constructor_function(thisIsVariable){
+        this.table =`${thisIsVariable} Table`
+     }
+     // here we are creating a  new room for john using constructor specified above
+     var johnroom=new this_is_constructor_function("John") // here we are using new keyword to create new room based on prototype of constructor function
+     console.log(johnroom.table);
+     //
+
+     // now we will do the same thing again but using Classes concept
+     class roomMaker{
+        constructor(name) {
+            this.table=`${name} table`
+        }
+     }
+     var jillsRoom=new roomMaker("Jills")
+     console.log(jillsRoom.table);
+
+     // now we will add one function in class
+     class classmaker{
+        constructor(name,subject,rollNo){
+            this.name=`my name is ${name}`
+            this.rollNumber=rollNo
+            this.subject=subject
+           this.next=null
+        }
+        clean(soap){
+            console.log("now i am cleaning using" ,soap, "in",this.name);
+        }
+
+     }
+     // now creating using class
+     var mohit=new classmaker("Mohit","PCM","34")
+     console.log(mohit);
+     // now calling function 
+     mohit.clean("some soap")
+
+
+     // we use same concept to make head of any linked list and in append function we just create one more head and insert it into next in next file
+    
+
+</script>
+</html>
