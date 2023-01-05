@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Here we are going to learn about constructor</h1>
+    <h2>constructor are nothing but a function</h2>
+    <h1>We use constructor to create objects by own</h1>
+    <h2>we will give a protype and then constructor will create abject basis on the prototype</h2>
+</br>
+</br>
+    <h1>Now here we are going to ask our constructor to add a method just when you are creating  new room for anyone</h1>
+
+</body>
+<script>
+    // here we are making prototype
+    var createRoom= function(name){
+        this.table=`${name} table`
+    }
+    // above and below are the same things above we are storing function in a variable and below we are creating a normal function
+    function createRoom(){
+        this.table=`${name} table`
+    }
+    // here we are making new house for john by using prototype
+   var johnHouse= new createRoom("john")
+   console.log(johnHouse.table);
+   // here we are  making a function and then we will call it for john's room with using call function
+   function cleanTable(tablename){
+    console.log("cleaning ",tablename, this.table);
+   }
+   // called function using call method and here john's is variable passed and this. table is referring to 
+   // johntable .this
+   cleanTable.call(this.johnHouse,"john's")
+   // here we are going to call function inside johnroom without using the call function
+
+   // here we will ask constructor to create a method along with creating new function so
+   // we will not need to create new function for everyone and also 
+   // we will no longer need to use this calll method it will be automatically inserted in it
+   // so we only need to call it normally
+   createRoom.prototype.cleanTable =function cleanTable(tablename){ // here we are creating a protype function named clearntable or we can say a vairable which have...
+
+    console.log("cleaning ",tablename, this.table); // here we have contents of function
+   } 
+   johnHouse.cleanTable("johnny reoom")
+   // again creating one more room for jills
+   var jillsRoom= new createRoom("Jills")
+   console.log(jillsRoom.table);
+
+</script>
+</html>
