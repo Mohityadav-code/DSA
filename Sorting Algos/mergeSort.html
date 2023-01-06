@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var arr = [4, 3, 15, 18, 3];
+
+        // var mid=math.floor(arr.l)
+        function merge(arr, start, mid, end) {
+            var m = mid - start + 1;
+            var n = end - mid;
+            var arr1 = new Array(m);
+            var arr2 = new Array(n);
+            for (var i = 0; i < m; i++) {
+                arr1[i] = arr[start + i];
+
+            }
+            for (var j = 0; j < n; j++) {
+                arr1[j] = arr[mid + 1 + j];
+
+            }
+            var p1 = 0
+            var p2 = 0
+            var var3 = start;
+            while (p1 < m && p2 < n) {
+                if (arr1[p1] < arr2[p2]) {
+                    arr[var3] = arr1[p1]
+                    p1++
+                }
+                else {
+                    arr[var3] = arr2[p2]
+                    p2++
+
+                }
+                var3++
+            }
+            while (p1 < m) {
+                arr[var3] = arr1[p1]
+                p1++
+                var3++
+
+            }
+            while (p2 < n) {
+                arr[var3] = arr2[p2]
+                p2++
+                var3++
+            }
+        }
+
+
+function mergesort(array,start,end){
+    while(start>=end)
+    return
+    // var mid= start+math.floor((end-start)/2) this will take smaller 
+    var mid=start+parseInt((end-start)/2)
+    mergesort(array,start,mid)
+    mergesort(array,mid+1,end)
+    merge(array,start,mid,end)
+    
+}
+mergesort(arr,0,arr.length-1)
+console.log(mergesort(arr,0,arr.length-1))
+for (var i = 0; i <arr.length; i++)
+       console.log(arr[i] + " ");
+    console.log(arr)
+
+
+    </script>
+</body>
+
+</html>
