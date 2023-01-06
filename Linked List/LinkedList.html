@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    // finally here we are going to create a fully working linked list
+
+    // we will create two constructor one for node and another for linked List
+    class node {
+        constructor(name) {
+            this.value = name,
+                this.next = null
+        }
+    }
+    // var head = new node("mohit")
+    // console.log('head: ', head);
+    class newnode {
+        constructor(name) {
+            this.head = {
+                head: name,
+                next: null
+            }
+            this.next=this.head
+        }
+        append(name){
+             const h11=new node(name)
+            this.head.next=h11
+            this.next=h11
+        }
+
+    }
+    var head=new newnode("anjani")
+    console.log('head: ', head);
+    head.append("51")
+    // head.append("mohit2")
+    // console.log('head: ', head);
+
+    class Node {
+        constructor(value) {
+            this.value = value;
+            this.location = null;
+        }
+    }
+    class Linkedlist {
+        constructor(value) {
+            this.head = {
+                value: value,
+                location: null,
+            };
+            this.tail = this.head;
+            // this.length = 1;
+        }
+        append(value) {
+            if (this.head == null) {
+                this.head = Node;
+            } else {
+                const newNode = new Node(value);
+                this.tail.location = newNode;
+                this.tail = newNode;
+                this.length++;
+            }
+        }
+    }
+    var newap = new Linkedlist("mohit")
+    console.log('newap: ', newap);
+    newap.append(52);
+
+</script>
+
+</html>
