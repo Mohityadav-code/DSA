@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    // enqueue
+    // dequeue
+    // front for front
+    // size
+    // empty
+    // peek
+
+        class Queue {
+        constructor() {
+            this.items = []
+        }
+        enqueue(value) {
+            this.items.push(value)
+        }
+        dequeue(){
+           this.items.shift()     
+        }
+        front(){
+            return this.items[0]
+        }
+        peek(){
+            return this.items[this.items.length-1]
+        }
+        size(){
+            return this.itmes.length
+        }
+        isempty(){
+            return(this.itmes.length===0)
+        }
+        emptythis(){
+            return(this.itmes.length=0)
+        }
+        tostring(){
+            return this.items.toString()
+        }
+        
+    }
+    var q1=new Queue
+    q1.enqueue(24)
+    q1.enqueue(24)
+    q1.enqueue(24)
+    q1.enqueue(24)
+    q1.dequeue()
+    q1.enqueue(24)
+    q1.enqueue(24)
+    q1.dequeue()
+    console.log(' q1.peek(): ',  q1.peek());
+    q1.enqueue(24)
+    q1.enqueue(24)
+    q1.tostring()
+    console.log('q1.tostring(): ', q1.tostring());
+    console.log(q1);
+</script>
+</html>
